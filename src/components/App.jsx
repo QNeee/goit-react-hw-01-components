@@ -8,7 +8,7 @@ import { FriendList } from "components/FriendList/FriendList";
 import { TransactionHistory } from "components/Transactions/TransactionHistory"
 
 export const App = () => {
-    return <div>
+    return <div style={{ padding: "50px" }}>
         <Profile
             username={user.username}
             tag={user.tag}
