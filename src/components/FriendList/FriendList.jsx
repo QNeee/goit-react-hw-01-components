@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import css from './FriendList.module.css';
+import { FriendListUl, FriendListItem, Status, Avatar, FriendName } from './FriendList.styled';
+
 function friendOnline(status) {
     if (status) {
         return '#2ECC71';
@@ -8,17 +9,16 @@ function friendOnline(status) {
     }
 }
 export const FriendList = ({ friends }) => {
-    return (<ul className={css.friendList}>
-        {friends.map(({ avatar, name, isOnline, id }) => <li className={css.item} key={id}>
-            <span
-                className={css.status}
+    return (<FriendListUl>
+        {friends.map(({ avatar, name, isOnline, id }) => <FriendListItem key={id}>
+            <Status
                 style={{ color: friendOnline(isOnline) }}
             >●
-            </span>
-            <img className={css.avatar} src={avatar} alt={name} width="48" />
-            <p className={css.name}>{name}</p>
-        </li>)}
-    </ul>);
+            </Status>
+            <Avatar src={avatar} alt={name} width="48" />
+            <FriendName>{name}</FriendName>
+        </FriendListItem>)}
+    </FriendListUl>);
 }
 FriendList.propTypes = {
     avatar: PropTypes.string,
