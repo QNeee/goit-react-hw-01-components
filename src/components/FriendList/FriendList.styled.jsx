@@ -6,6 +6,8 @@ export const FriendListItem = styled.li`  outline: 1px solid tomato;
   margin-left: auto;
   margin-right: auto;`;
 export const Status = styled.span` margin: 15px;
-  font-size: 55px;`;
+  font-size: 55px;
+  `
+  ;
 export const Avatar = styled.img` background-color: blue;`;
 export const FriendName = styled.p` text-transform: uppercase;`;
